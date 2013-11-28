@@ -29,7 +29,7 @@ function weather_block_view($delta = '') {
 		  
 		  $message = '';
 		  for ($i = 0; $i < SAHIL_REPEAT_NUMBER; $i++) {
-		  	$message .= t('HURRY UP SAHIL<br/>');
+		  	$message .= t('Ben is charged for harassment <br/>');
 		  }
 		  $message = $message.', it\'s';
 
