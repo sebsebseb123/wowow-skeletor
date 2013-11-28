@@ -1,0 +1,5 @@
+name = weather
+description = "Provides weather info for Toronto"
+core = 7.x
+dependencies[] = block
+
