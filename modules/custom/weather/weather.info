@@ -1,5 +1,4 @@
-name = weather
-description = "Provides weather info for Toronto"
+name = Weather
+description = "Provides weather"
 core = 7.x
 dependencies[] = block
-
