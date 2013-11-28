@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function weather_block_info() {
+	$blocks['weather'] = array(
+		'info' => t('Weather'),
+	);
+	return $blocks;	
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function weather_block_view($delta = '') {
+	// This example is adapted from node.module.
+	$block = array();
+
+	define('KELVIN_IN_ZERO_CELSIUS', 273.15);
+	define('SAHIL_REPEAT_NUMBER', 100);
+
+	switch ($delta) {
+		case 'weather':
+		  $block['subject'] = t('Weather report');
+
+		  $weather_data = weather_get_weather_data();
+		  $celsius = $weather_data['main']['temp'] - KELVIN_IN_ZERO_CELSIUS;
+		  
+		  $message = '';
+		  for ($i = 0; $i < SAHIL_REPEAT_NUMBER; $i++) {
+		  	$message .= t('HURRY UP SAHIL<br/>');
+		  }
+		  $message = $message.', it\'s';
+
+		  $block['content'] = $message.$celsius.'C';
+		  break;
+	}
+	return $block;
+}
+
+/**
+ * Get weather data.
+ */
+function weather_get_weather_data() {
+	$jsonurl = 'http://api.openweathermap.org/data/2.5/weather?q=Toronto,ca';
+
+	$json = drupal_http_request($jsonurl);
+	$result = drupal_json_decode($json->data);
+
+	return $result;
+}
