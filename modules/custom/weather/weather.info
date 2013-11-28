@@ -1,0 +1,7 @@
+name = Weather
+description = "Provides weather"
+core = 7.x
+dependencies[] = block
+
+
+
