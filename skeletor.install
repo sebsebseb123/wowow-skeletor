@@ -81,8 +81,8 @@ function skeletor_install() {
 
   // Enable modules.
   $modules = array(
-    'fields',
-    'fields_ui',
+    'field',
+    'field_ui',
     'toolbar',
   );
   module_enable($modules);
