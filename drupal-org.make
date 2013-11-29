@@ -8,6 +8,12 @@ core = 7.x
 ; ; This is the issue title: http://drupal.org/node/xxxxxxx#comment-xxxxxxx
 ; projects[][patch][] =
 
+projects[admin_menu][subdir] = contrib
+projects[admin_menu][version] = 3.0-rc3
+
+projects[devel][subdir] = contrib
+projects[devel][version] = 1.3
+
 ; MODULES
 ; Ascending alphabetical order.
 
