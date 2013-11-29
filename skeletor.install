@@ -85,4 +85,5 @@ function skeletor_install() {
     'fields_ui',
     'toolbar',
   );
+  module_enable($modules);
 }
