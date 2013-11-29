@@ -81,9 +81,17 @@ function skeletor_install() {
 
   // Enable modules.
   $modules = array(
+    // core
     'field',
     'field_ui',
-    'toolbar',
+
+    // contrib
+    'admin_menu',
+    'admin_menu_toolbar',
+    'devel',
+
+    // custom
+    'weather',
   );
   module_enable($modules);
 }
